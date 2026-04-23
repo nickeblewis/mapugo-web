@@ -13,7 +13,9 @@ export const POSTS_QUERY = defineQuery(`
     "slug": slug.current,
     publishedAt,
     tags,
-    image
+    image,
+    gpsLat,
+    gpsLng
   }
 `);
 
@@ -29,7 +31,9 @@ export const POST_BY_SLUG_QUERY = defineQuery(`
     publishedAt,
     tags,
     image,
-    body
+    body,
+    gpsLat,
+    gpsLng
   }
 `);
 
