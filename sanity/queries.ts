@@ -14,8 +14,7 @@ export const POSTS_QUERY = defineQuery(`
     publishedAt,
     tags,
     image,
-    gpsLat,
-    gpsLng
+    location
   }
 `);
 
@@ -32,8 +31,7 @@ export const POST_BY_SLUG_QUERY = defineQuery(`
     tags,
     image,
     body,
-    gpsLat,
-    gpsLng
+    location
   }
 `);
 

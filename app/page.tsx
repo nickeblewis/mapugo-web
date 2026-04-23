@@ -40,16 +40,15 @@ export default async function Home() {
     { next: { revalidate: 60 } },
   );
 
-  // `gpsLat` / `gpsLng` are stored as strings in Sanity (see
-  // `studio-mapugo/schemaTypes/postType.ts`). Parse them here, drop any posts
-  // whose coordinates are missing or non-numeric, and hand the rest to Map.
-  // If no posts have valid coordinates, `markers` is `undefined` and the map
-  // renders with no pins.
+  // `location` is a Sanity `geopoint` (see
+  // `studio-mapugo/schemaTypes/postType.ts`): `{ lat, lng, alt? }` with
+  // numeric coordinates. Drop any posts that don't have one.
   const postMarkers: MapMarker[] = posts.flatMap((post) => {
-    const lat = post.gpsLat != null ? Number.parseFloat(post.gpsLat) : NaN;
-    const lng = post.gpsLng != null ? Number.parseFloat(post.gpsLng) : NaN;
-    if (!Number.isFinite(lat) || !Number.isFinite(lng)) return [];
-    return [{ lat, lng, label: post.title }];
+    const loc = post.location;
+    if (!loc || !Number.isFinite(loc.lat) || !Number.isFinite(loc.lng)) {
+      return [];
+    }
+    return [{ lat: loc.lat, lng: loc.lng, label: post.title }];
   });
 
   // Combine landmarks with any post coordinates. `center` on the Map call

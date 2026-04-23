@@ -9,6 +9,16 @@ import type { SanityImageSource } from "@sanity/image-url";
  * `npx sanity@latest typegen generate` in the studio to derive these
  * automatically.
  */
+/**
+ * Shape of Sanity's built-in `geopoint` field. `alt` is optional; we omit
+ * `_type` since our GROQ projections don't select it.
+ */
+export type GeoPoint = {
+  lat: number;
+  lng: number;
+  alt?: number;
+};
+
 export type PostSummary = {
   _id: string;
   title: string;
@@ -17,8 +27,7 @@ export type PostSummary = {
   publishedAt?: string;
   tags?: string[];
   image?: SanityImageSource;
-  gpsLat?: string;
-  gpsLng?: string;
+  location?: GeoPoint;
 };
 
 export type Post = PostSummary & {
