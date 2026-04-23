@@ -12,6 +12,8 @@ import {
 } from "@/sanity/queries";
 import type { Post } from "@/sanity/types";
 
+import Map from "@/app/components/Map";
+
 /**
  * Pre-render all known post slugs at build time. Next.js will still render
  * newly-published posts on demand the first time they're requested.
@@ -101,6 +103,8 @@ export default async function PostPage(props: PageProps<"/post/[slug]">) {
         </div>
       ) : null}
 
+      <Map />
+      
       {post.body ? (
         <div className="max-w-3xl flex flex-col gap-5 text-base md:text-lg leading-relaxed [&_h2]:text-2xl [&_h2]:font-semibold [&_h2]:mt-6 [&_h3]:text-xl [&_h3]:font-semibold [&_a]:underline [&_a]:text-teal-700 dark:[&_a]:text-teal-300 [&_ul]:list-disc [&_ul]:pl-6 [&_ol]:list-decimal [&_ol]:pl-6 [&_code]:font-mono [&_code]:bg-stone-100 dark:[&_code]:bg-stone-800 [&_code]:px-1 [&_code]:rounded">
           <PortableText value={post.body} />

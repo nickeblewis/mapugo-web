@@ -7,7 +7,7 @@
  */
 
 export const projectId =
-  process.env.NEXT_PUBLIC_SANITY_PROJECT_ID ?? "23hp7dr5";
+  process.env.NEXT_PUBLIC_SANITY_PROJECT_ID ?? "4zdvmoav";
 
 export const dataset =
   process.env.NEXT_PUBLIC_SANITY_DATASET ?? "production";

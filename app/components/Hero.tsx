@@ -20,11 +20,11 @@ type HeroProps = {
  * can swap it out without touching this file (just pass `backgroundSrc`).
  */
 export default function Hero({
-  eyebrow = "JAMStack Web, Reading, Berkshire",
-  title = "Helping your business find the greatest outcomes through technology",
-  body = "We develop solutions that help businesses like yours reach the outcomes you set out to achieve.",
-  ctaLabel = "Get in contact today",
-  ctaHref = "/contact",
+  eyebrow = "Maps. Photography. Stories. ",
+  title = "Discovering the world, one story at a time",
+  body = "Welcome to Mapugo, a travel blog where we share our adventures, tips, and stories from around the globe. Join us as we explore new destinations and create unforgettable memories.",
+  ctaLabel = "Sign up today",
+  ctaHref = "/sign-up",
   backgroundSrc = "/images/hero.jpg",
 }: HeroProps) {
   return (

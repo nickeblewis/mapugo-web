@@ -17,6 +17,8 @@ export type PostSummary = {
   publishedAt?: string;
   tags?: string[];
   image?: SanityImageSource;
+  gpsLat?: string;
+  gpsLng?: string;
 };
 
 export type Post = PostSummary & {

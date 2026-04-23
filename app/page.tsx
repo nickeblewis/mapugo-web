@@ -4,6 +4,7 @@ import type { PostSummary } from "@/sanity/types";
 
 import Hero from "./components/Hero";
 import ListPosts from "./components/ListPosts";
+import Map from "./components/Map";
 
 /**
  * Homepage. This is an **async Server Component** — the default in the App
@@ -27,6 +28,16 @@ export default async function Home() {
   return (
     <>
       <Hero />
+
+      <section aria-labelledby="map-heading">
+        <h2
+          id="map-heading"
+          className="text-lg font-medium tracking-wide mb-3"
+        >
+          Find us
+        </h2>
+        <Map />
+      </section>
 
       <section>
         <h2 className="text-lg font-medium tracking-wide text-end">
